@@ -14,7 +14,7 @@
     --color-border: rgba(0, 0, 0, 0.08);
     --gap: clamp(24px, 1.7032rem + 1.9355vw, 48px);
     --head-nav-gap: 32px;
-    --container-width: 1440px;
+    --container-width: 920px;
     --content-font-size: 1.6rem;
     --header-spacing: clamp(4.8rem, 4rem + 2.5vw, 8rem);
 }
@@ -27,12 +27,25 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: #fff;
 }
 
 .gh-main {
+    max-width: var(--container-width);
     padding-top: clamp(4.8rem, 4rem + 2.5vw, 8rem);
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--background-color);
 }
+
+/* Post page background colors — cycled by publish day-of-week */
+.gh-main[data-pub-day="0"] { background-color: #D9ECF7; }
+.gh-main[data-pub-day="1"] { background-color: #E7E7B5; }
+.gh-main[data-pub-day="2"] { background-color: #BFE8D6; }
+.gh-main[data-pub-day="3"] { background-color: #D8DEE3; }
+.gh-main[data-pub-day="4"] { background-color: #F0F2F3; }
+.gh-main[data-pub-day="5"] { background-color: #F5D8D6; }
+.gh-main[data-pub-day="6"] { background-color: #F6F8F7; }
 
 figcaption {
     font-size: 1.3rem;
@@ -189,11 +202,11 @@ hr {
     color: inherit;
 }
 
-.post-template .gh-head-members {
+.gh-head-members {
     display: none;
 }
 
-.post-template.tag-art-of-beatmaking .gh-head-members {
+:is(.post-template, .tag-template).tag-art-of-beatmaking .gh-head-members {
     display: flex;
 }
 
@@ -808,6 +821,23 @@ hr {
 .post-template .gh-navigation {
     display: flex;
     justify-content: flex-end;
+}
+
+.gh-navigation-link {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.gh-navigation-arrow {
+    width: 24px;
+    height: auto;
 }
 
 /* Comments
