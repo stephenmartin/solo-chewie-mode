@@ -107,9 +107,6 @@ hr {
 
 .post-template .gh-canvas > * {
     grid-column: 3 / span 8;
-    max-width: 560px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .gh-canvas > .kg-width-wide {
