@@ -1,6 +1,6 @@
 {
-    "name": "solo",
-    "description": "A Ghost theme",
+    "name": "chewie-mode",
+    "description": "Chewie Mode — a custom Ghost theme",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -50,11 +50,6 @@
                 "type": "select",
                 "options": ["Logo on the left", "Logo in the middle", "Stacked"],
                 "default": "Logo on the left"
-            },
-            "typography": {
-                "type": "select",
-                "options": ["Modern sans-serif", "Elegant serif", "Consistent mono"],
-                "default": "Modern sans-serif"
             },
             "footer_text": {
                 "type": "text"
