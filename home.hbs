@@ -1,0 +1,48 @@
+{{!< default}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-poster gh-inner">
+
+        {{!-- Row 1: Headliner — latest post, biggest type --}}
+        {{#foreach posts from="1" to="1"}}
+        <a class="gh-poster-item gh-poster-headliner" href="{{url}}">
+            {{#if primary_tag}}<span class="gh-poster-tag">{{primary_tag.name}}</span>{{/if}}
+            <h2 class="gh-poster-title{{#if featured}} is-featured{{/if}}">{{title}}</h2>
+            <time class="gh-poster-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
+        </a>
+        {{/foreach}}
+
+        <hr class="gh-poster-rule">
+
+        {{!-- Row 2: Two posts side by side --}}
+        <div class="gh-poster-duo">
+            {{#foreach posts from="2" to="3"}}
+            <a class="gh-poster-item gh-poster-support" href="{{url}}">
+                {{#if primary_tag}}<span class="gh-poster-tag">{{primary_tag.name}}</span>{{/if}}
+                <h2 class="gh-poster-title{{#if featured}} is-featured{{/if}}">{{title}}</h2>
+            </a>
+            {{/foreach}}
+        </div>
+
+        <hr class="gh-poster-rule">
+
+        {{!-- Row 3: Full width feature --}}
+        {{#foreach posts from="4" to="4"}}
+        <a class="gh-poster-item gh-poster-feature" href="{{url}}">
+            {{#if primary_tag}}<span class="gh-poster-tag">{{primary_tag.name}}</span>{{/if}}
+            <h2 class="gh-poster-title{{#if featured}} is-featured{{/if}}">{{title}}</h2>
+        </a>
+        {{/foreach}}
+
+        <hr class="gh-poster-rule">
+
+        {{!-- Row 4: Closer --}}
+        {{#foreach posts from="5" to="5"}}
+        <a class="gh-poster-item gh-poster-closer" href="{{url}}">
+            {{#if primary_tag}}<span class="gh-poster-tag">{{primary_tag.name}}</span>{{/if}}
+            <h2 class="gh-poster-title{{#if featured}} is-featured{{/if}}">{{title}}</h2>
+        </a>
+        {{/foreach}}
+
+    </div>
+</main>
