@@ -6,6 +6,7 @@
     --font-mono: "IBM Plex Mono", Menlo, Consolas, Monaco, monospace;
     --font-sans: var(--font-heading);
     --font-serif: var(--font-body);
+    --color-darker-gray: #000;
     --color-primary-text: var(--color-darker-gray);
     --color-secondary-text-dark: rgba(0, 0, 0, 0.4);
     --color-secondary-text-light: rgba(255, 255, 255, 0.64);
@@ -240,7 +241,7 @@ hr {
     flex-direction: column;
     align-items: center;
     padding-top: 0;
-    padding-bottom: 80px;
+    padding-bottom: 0;
     text-align: center;
 }
 
@@ -349,7 +350,7 @@ hr {
     height: 4px;
     margin: 0;
     border: none;
-    background-color: currentcolor;
+    background-color: var(--color-darker-gray);
 }
 
 @media (max-width: 767px) {
