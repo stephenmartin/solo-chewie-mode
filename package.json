@@ -58,45 +58,41 @@
                 "group": "homepage",
                 "visibility": "show_special_guests:true"
             },
-            "color_default": {
-                "type": "color",
-                "default": "#F6F8F7",
-                "group": "colors"
-            },
             "color_sunday": {
                 "type": "color",
                 "default": "#D9ECF7",
-                "group": "colors"
+                "description": "Post backgrounds are set by publish day.",
+                "group": "post"
             },
             "color_monday": {
                 "type": "color",
                 "default": "#E7E7B5",
-                "group": "colors"
+                "group": "post"
             },
             "color_tuesday": {
                 "type": "color",
                 "default": "#BFE8D6",
-                "group": "colors"
+                "group": "post"
             },
             "color_wednesday": {
                 "type": "color",
                 "default": "#D8DEE3",
-                "group": "colors"
+                "group": "post"
             },
             "color_thursday": {
                 "type": "color",
                 "default": "#F0F2F3",
-                "group": "colors"
+                "group": "post"
             },
             "color_friday": {
                 "type": "color",
                 "default": "#F5D8D6",
-                "group": "colors"
+                "group": "post"
             },
             "color_saturday": {
                 "type": "color",
                 "default": "#F6F8F7",
-                "group": "colors"
+                "group": "post"
             }
         }
     },
