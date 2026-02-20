@@ -3,47 +3,38 @@
 {{#post}}
 <main class="gh-main gh-outer" data-pub-day="{{date format="d"}}">
     <div class="gh-inner">
-            <article class="gh-article {{post_class}}">
+        <article class="gh-article {{post_class}}">
+            <header class="gh-article-header gh-canvas">
+                {{#if primary_tag}}
+                    <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                {{/if}}
+                <h1 class="gh-article-title">{{title}}</h1>
+                <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
                 {{#if feature_image}}
-                    <header class="gh-article-header gh-canvas">
-                        {{#if primary_tag}}
-                            <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-                        {{/if}}
-                        <h1 class="gh-article-title">{{title}}</h1>
-                        <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
-                        {{> "feature-image"}}
-                    </header>
+                    {{> "feature-image"}}
                 {{/if}}
+            </header>
 
-                <section class="gh-content gh-canvas">
-                    {{#unless feature_image}}
-                        <header class="gh-article-header">
-                            {{#if primary_tag}}
-                                <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-                            {{/if}}
-                            <h1 class="gh-article-title">{{title}}</h1>
-                            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
-                        </header>
-                    {{/unless}}
-                    {{content}}
-                    <img class="gh-content-star" src="{{asset "images/little-star.svg"}}" alt="">
-                </section>
+            <section class="gh-content gh-canvas">
+                {{content}}
+                <img class="gh-content-star" src="{{asset "images/little-star.svg"}}" alt="">
+            </section>
 
-                {{#if comments}}
-                    <div class="gh-comments gh-canvas">
-                        <h2 class="gh-comments-title">{{comment_count empty="" single="comment" plural="comments"}}</h2>
-                        {{comments title="" count=false}}
-                    </div>
-                {{/if}}
+            {{#if comments}}
+                <div class="gh-comments gh-canvas">
+                    <h2 class="gh-comments-title">{{comment_count empty="" single="comment" plural="comments"}}</h2>
+                    {{comments title="" count=false}}
+                </div>
+            {{/if}}
 
-                <footer class="gh-article-footer gh-canvas">
-                    <nav class="gh-navigation">
-                        {{#if primary_tag}}
-                            <a class="gh-navigation-link" href="{{primary_tag.url}}">check out more <img class="gh-navigation-arrow" src="{{asset "images/arrow-left.svg"}}" alt=""></a>
-                        {{/if}}
-                    </nav>
-                </footer>
-            </article>
+            <footer class="gh-article-footer gh-canvas">
+                <nav class="gh-navigation">
+                    {{#if primary_tag}}
+                        <a class="gh-navigation-link" href="{{primary_tag.url}}">check out more <img class="gh-navigation-arrow" src="{{asset "images/arrow-left.svg"}}" alt=""></a>
+                    {{/if}}
+                </nav>
+            </footer>
+        </article>
     </div>
 </main>
 {{/post}}

@@ -34,9 +34,16 @@ body {
     position: relative;
     max-width: var(--container-width);
     padding-top: 40px;
+    padding-right: 0;
+    padding-left: 0;
     margin-right: auto;
     margin-left: auto;
     background-color: var(--background-color);
+}
+
+.gh-main .gh-inner {
+    padding-right: 24px;
+    padding-left: 24px;
 }
 
 /* Post background colors — cycled by publish day-of-week */
@@ -87,7 +94,7 @@ hr {
 }
 
 .gh-content h2 {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 4.8rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -95,28 +102,28 @@ hr {
 }
 
 .gh-content h3 {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 3.6rem;
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .gh-content h4 {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 2.8rem;
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .gh-content h5 {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 2.2rem;
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .gh-content h6 {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 1.8rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -262,7 +269,7 @@ hr {
 
 .gh-poster-title {
     margin: 0;
-    font-family: 'Inter', var(--font-body);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
@@ -272,7 +279,7 @@ hr {
 .gh-poster-tag {
     display: block;
     margin-bottom: 8px;
-    font-family: 'Source Serif 4', var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.5;
@@ -283,7 +290,7 @@ hr {
 .gh-poster-date {
     display: block;
     margin-top: 12px;
-    font-family: 'Inter', var(--font-body);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 3.6rem;
     font-weight: 700;
     line-height: auto;
@@ -324,6 +331,10 @@ hr {
 }
 
 .gh-poster-duo .gh-poster-support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 24px 16px;
 }
 
@@ -406,7 +417,7 @@ hr {
 }
 
 .gh-projects-link {
-    font-family: 'Inter', var(--font-body);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     font-size: 2rem;
     text-transform: uppercase;
@@ -429,7 +440,7 @@ hr {
 }
 
 .gh-card-title {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     text-transform: uppercase;
     word-break: break-word;
@@ -571,7 +582,7 @@ hr {
     min-height: 45px;
     padding: 10px 32px;
     margin-top: 20px;
-    font-family: var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.5;
@@ -601,16 +612,7 @@ hr {
     margin-bottom: 16px;
 }
 
-.gh-content .gh-article-header {
-    grid-row-start: 1;
-    grid-column: 4 / span 9;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-:is(.post-template, .page-template) .gh-content .gh-article-header {
-    grid-column: 1 / span 12;
-    max-width: none;
+:is(.post-template, .page-template) .gh-article-header {
     text-align: center;
 }
 
@@ -619,7 +621,7 @@ hr {
     max-width: 720px;
     margin-right: auto;
     margin-left: auto;
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: 6.4rem;
     font-weight: 900;
     line-height: 1;
@@ -640,7 +642,7 @@ hr {
 .gh-article-excerpt {
     grid-column: 1 / span 9;
     max-width: 840px;
-    font-family: var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-size: clamp(1.8rem, 0.54vw + 1.54rem, 2.4rem);
     font-weight: 500;
     line-height: 1.45;
@@ -660,7 +662,7 @@ hr {
 
     position: relative;
     margin-top: 0;
-    font-family: var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.5;
@@ -668,18 +670,15 @@ hr {
 }
 
 
-:is(.post-template, .page-template) .no-image .gh-content {
-    margin-top: 0;
-}
 
 .gh-content > [id] {
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .gh-article-footer {
-    margin-top: clamp(6.4rem, 3rem + 10.625vw, 20rem);
+    margin-top: 16px;
 }
 
 @media (max-width: 991px) {
@@ -713,7 +712,7 @@ hr {
 }
 
 .gh-error-site {
-    font-family: 'Inter', var(--font-body);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     font-size: 2.4rem;
     letter-spacing: 0.15em;
@@ -722,7 +721,7 @@ hr {
 }
 
 .gh-error-presents {
-    font-family: 'Source Serif 4', var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-weight: 400;
     font-style: italic;
     font-size: 1.4rem;
@@ -738,7 +737,7 @@ hr {
 }
 
 .gh-error-title {
-    font-family: 'Inter', var(--font-body);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     font-size: clamp(4.8rem, 4rem + 2.5vw, 8rem);
     line-height: 1;
@@ -754,7 +753,7 @@ hr {
 
 .gh-error-body {
     margin-bottom: 40px;
-    font-family: var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-size: 1.6rem;
     line-height: 1.6;
 }
@@ -788,7 +787,7 @@ hr {
 
 .gh-cta-title {
     margin-bottom: 24px;
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: clamp(3rem, 0.71vw + 2.66rem, 3.8rem);
     font-weight: 900;
     text-transform: uppercase;
@@ -807,24 +806,19 @@ hr {
 /* ---------------------------------------------------------- */
 
 .gh-navigation {
-    grid-column: 1 / span 12;
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: clamp(2rem, 1.7rem + 0.9375vw, 3.2rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.02em;
-}
-
-.post-template .gh-navigation {
-    display: flex;
-    justify-content: flex-end;
+    text-align: center;
 }
 
 .gh-navigation-link {
     display: inline-flex;
     gap: 8px;
     align-items: center;
-    font-family: var(--font-body);
+    font-family: var(--gh-font-body, var(--font-body));
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.5;
@@ -846,7 +840,7 @@ hr {
 
 .gh-comments .gh-comments-title {
     margin-bottom: 48px;
-    font-family: var(--font-heading);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -921,7 +915,7 @@ hr {
 }
 
 .tag-template .gh-card-title {
-    font-family: 'Inter', var(--font-body);
+    font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     font-size: 5.12rem;
     line-height: 1.1;
@@ -960,22 +954,26 @@ hr {
 /* ---------------------------------------------------------- */
 
 .gh-foot {
-    padding-top: clamp(8rem, 4.55vw + 6.18rem, 12rem);
-    padding-bottom: clamp(8rem, 4.55vw + 6.18rem, 12rem);
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .gh-foot-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-}
-
-.gh-foot-menu {
-    font-size: 1.6rem;
-    font-weight: 700;
+    display: block;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
 }
 
 .gh-copyright {
-    font-size: 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.gh-copyright a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }

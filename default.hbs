@@ -79,17 +79,8 @@
 
     <footer class="gh-foot gh-outer">
         <div class="gh-foot-inner gh-inner">
-            <nav class="gh-foot-menu">
-                {{navigation type="secondary"}}
-            </nav>
-
-            <div class="gh-copyright">
-                {{#unless @custom.footer_text}}
-                    {{@site.title}} © {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
-                {{else}}
-                    {{@custom.footer_text}}
-                {{/unless}}
-            </div>
+            <p class="gh-copyright">&copy; {{date format="YYYY"}}, Stephen Martin.</p>
+            <p class="gh-copyright">Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>, inspired by <a href="https://amzn.to/4rzGCdY" target="_blank" rel="noopener">Born in the Bronx</a>.</p>
         </div>
     </footer>
 
