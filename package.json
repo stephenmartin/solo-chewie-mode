@@ -50,22 +50,6 @@
             "footer_text": {
                 "type": "text"
             },
-            "header_section_layout": {
-                "type": "select",
-                "options": ["Side by side", "Large background", "Typographic profile"],
-                "default": "Large background",
-                "group": "homepage"
-            },
-            "primary_header": {
-                "type": "text",
-                "default": "Welcome to my site",
-                "group": "homepage"
-            },
-            "secondary_header": {
-                "type": "text",
-                "default": "Subscribe below to receive my latest posts directly in your inbox",
-                "group": "homepage"
-            },
             "post_feed_layout": {
                 "type": "select",
                 "options": ["Classic", "Typographic", "Parallax"],
