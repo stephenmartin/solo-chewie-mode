@@ -47,8 +47,16 @@
                 "options": ["Logo on the left", "Logo in the middle", "Stacked"],
                 "default": "Logo on the left"
             },
-            "footer_text": {
-                "type": "text"
+            "show_special_guests": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "special_guests_tag": {
+                "type": "text",
+                "default": "Project",
+                "group": "homepage",
+                "visibility": "show_special_guests:true"
             }
         }
     },

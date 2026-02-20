@@ -46,19 +46,21 @@
 
     </div>
 
-    {{!-- Projects section — pages tagged "Project" --}}
-    {{#get "pages" filter="tag:project" limit="all"}}
-        {{#if pages}}
-        <div class="gh-projects gh-inner">
-            <ul class="gh-projects-list">
-                <li class="gh-projects-heading">with special guests</li>
-                {{#foreach pages}}
-                <li class="gh-projects-item">
-                    <a class="gh-projects-link" href="{{url}}">{{title}}</a>
-                </li>
-                {{/foreach}}
-            </ul>
-        </div>
-        {{/if}}
-    {{/get}}
+    {{!-- Projects section — pages tagged with configurable tag --}}
+    {{#if @custom.show_special_guests}}
+        {{#get "pages" filter="tag:{{@custom.special_guests_tag}}" limit="all"}}
+            {{#if pages}}
+            <div class="gh-projects gh-inner">
+                <ul class="gh-projects-list">
+                    <li class="gh-projects-heading">with special guests</li>
+                    {{#foreach pages}}
+                    <li class="gh-projects-item">
+                        <a class="gh-projects-link" href="{{url}}">{{title}}</a>
+                    </li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            {{/if}}
+        {{/get}}
+    {{/if}}
 </main>
