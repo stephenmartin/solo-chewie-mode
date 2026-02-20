@@ -46,14 +46,14 @@ body {
     padding-left: 24px;
 }
 
-/* Post background colors — cycled by publish day-of-week */
-.post-template .gh-main[data-pub-day="0"] { background-color: #D9ECF7; }
-.post-template .gh-main[data-pub-day="1"] { background-color: #E7E7B5; }
-.post-template .gh-main[data-pub-day="2"] { background-color: #BFE8D6; }
-.post-template .gh-main[data-pub-day="3"] { background-color: #D8DEE3; }
-.post-template .gh-main[data-pub-day="4"] { background-color: #F0F2F3; }
-.post-template .gh-main[data-pub-day="5"] { background-color: #F5D8D6; }
-.post-template .gh-main[data-pub-day="6"] { background-color: #F6F8F7; }
+/* Post background colors — cycled by publish day-of-week, configurable in admin */
+.post-template .gh-main[data-pub-day="0"] { background-color: var(--day-0-color); }
+.post-template .gh-main[data-pub-day="1"] { background-color: var(--day-1-color); }
+.post-template .gh-main[data-pub-day="2"] { background-color: var(--day-2-color); }
+.post-template .gh-main[data-pub-day="3"] { background-color: var(--day-3-color); }
+.post-template .gh-main[data-pub-day="4"] { background-color: var(--day-4-color); }
+.post-template .gh-main[data-pub-day="5"] { background-color: var(--day-5-color); }
+.post-template .gh-main[data-pub-day="6"] { background-color: var(--day-6-color); }
 
 .post-template .gh-main::before {
     position: absolute;

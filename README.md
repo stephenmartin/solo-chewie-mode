@@ -1,38 +1,55 @@
-# Solo
+# Chewie Mode
 
-Solo is a minimal theme for [Ghost](https://github.com/TryGhost/Ghost) focused on showcasing the work of an individual writer or creator. This theme is highly customizable, with a few simple settings that allow you to quickly apply your own personal style to your site.
+A custom Ghost theme based on [Solo](https://github.com/TryGhost/Solo) by the Ghost Foundation. Chewie Mode reimagines Solo with a bold, typographic aesthetic inspired by concert posters and hip-hop flyer design — specifically the book [Born in the Bronx](https://amzn.to/4rzGCdY).
 
-**Demo: https://solo.ghost.io**
+## What changed from Solo
 
-# Instructions
+**Layout & Design**
+- Concert poster-style homepage with headliner/support/feature/closer post hierarchy
+- Day-of-week post background colors (configurable in admin)
+- Tag pages with starburst (bang) SVG header
+- Custom 404 error page in poster style
+- "With Special Guests" projects section pulling pages by configurable tag
+- Decorative SVG elements: bang starburst, little star, four dots
 
-1. [Download this theme](https://github.com/TryGhost/Solo/archive/main.zip)
-2. Log into Ghost, and go to the `Design` settings area to upload the zip file
+**Typography**
+- Inter (headings), Source Serif 4 (body), IBM Plex Mono (meta/nav) via Google Fonts CDN
+- Pure black (#000) color system — no charcoal, no softened grays
+- Ghost Admin font picker support via `--gh-font-heading` / `--gh-font-body` fallback pattern
 
-# Development
+**Simplifications**
+- Removed about section, parallax/typographic feed variants, author profile
+- Removed pagination (posts_per_page: 999)
+- Simplified post template to single header path
+- Stripped unused custom settings and CSS (~500+ lines removed)
 
-Edition styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+**Theme Settings (Admin > Design)**
+- Navigation layout (logo left, center, stacked)
+- Show/hide special guests section + configurable tag name
+- 8 background colors: default + one per day of week
+
+## Development
+
+Built with Gulp/PostCSS. Requires [Node](https://nodejs.org/) and [Yarn](https://yarnpkg.com/).
 
 ```bash
-# Install
+# Install dependencies
 yarn
 
-# Run build & watch for changes
+# Watch mode with livereload
 yarn dev
-```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+# One-time build
+yarn build
 
-The `zip` Gulp task packages the theme files into `dist/solo.zip`, which you can then upload to your site.
-
-```bash
+# Package for upload
 yarn zip
 ```
 
-# Contribution
+Source CSS lives in `/assets/css/`, compiled output in `/assets/built/`.
 
-This repo is synced automatically with [TryGhost/Themes](https://github.com/TryGhost/Themes) monorepo. If you're looking to contribute or raise an issue, head over to the main repository [TryGhost/Themes](https://github.com/TryGhost/Themes) where our official themes are developed.
+## Based on Solo
 
-## Copyright & License
+The core theme engine, shared assets (`@tryghost/shared-theme-assets`), build pipeline, and foundational template structure come from Solo. Chewie Mode is a design layer on top.
 
-Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
+Original Solo theme: Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
