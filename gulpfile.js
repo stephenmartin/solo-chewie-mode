@@ -85,7 +85,7 @@ function zipper(done) {
             '!dist', '!dist/**',
             '!yarn-error.log'
         ]),
-        zip(filename),
+        zip(filename, {compress: false}),
         dest('dist/')
     ], handleError(done));
 }
