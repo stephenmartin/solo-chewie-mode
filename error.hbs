@@ -1,0 +1,31 @@
+{{!< default}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+        <article class="gh-article">
+            <section class="gh-content gh-canvas">
+                <div class="gh-error">
+                    <div class="gh-error-header">
+                        <p class="gh-error-site">{{@site.title}}</p>
+                        <p class="gh-error-presents">presents</p>
+                    </div>
+                    <div class="gh-error-content">
+                        <div class="gh-error-title-block">
+                            <h1 class="gh-error-title">The Page Not Found</h1>
+                        </div>
+                        <img class="gh-error-star" src="{{asset "images/little-star.svg"}}" alt="">
+                    </div>
+                    <div class="gh-error-body">
+                        <p>This address does not exist.</p>
+                        <p>It may have moved or been removed.</p>
+                    </div>
+                    <div class="gh-error-meta">
+                        <span>{{@site.url}}</span>
+                        <span>Error {{statusCode}}</span>
+                        <span>ADM $0.00</span>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+</main>
