@@ -45,4 +45,19 @@
         {{/foreach}}
 
     </div>
+
+    {{!-- Projects section — pages tagged "Project" --}}
+    {{#get "pages" filter="tag:project" limit="all"}}
+        {{#if pages}}
+        <div class="gh-projects gh-inner">
+            <ul class="gh-projects-list">
+                {{#foreach pages}}
+                <li class="gh-projects-item">
+                    <a class="gh-projects-link" href="{{url}}">{{title}}</a>
+                </li>
+                {{/foreach}}
+            </ul>
+        </div>
+        {{/if}}
+    {{/get}}
 </main>
