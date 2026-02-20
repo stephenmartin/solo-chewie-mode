@@ -16,8 +16,6 @@
                 {{/if}}
 
                 <section class="gh-content gh-canvas">
-                    {{content}}
-                    <img class="gh-content-star" src="{{asset "images/little-star.svg"}}" alt="">
                     {{#unless feature_image}}
                         <header class="gh-article-header">
                             {{#if primary_tag}}
@@ -27,6 +25,8 @@
                             <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
                         </header>
                     {{/unless}}
+                    {{content}}
+                    <img class="gh-content-star" src="{{asset "images/little-star.svg"}}" alt="">
                 </section>
 
                 {{#if comments}}

@@ -10,12 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@700;900&family=Source+Serif+4:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
 
-    {{#is "home"}}
-        {{#if @site.cover_image}}
-            <link rel="preload" as="image" href="{{@site.cover_image}}">
-        {{/if}}
-    {{/is}}
-
     <style>
         :root {
             --background-color: #F6F8F7
@@ -23,17 +17,7 @@
     </style>
 
     <script>
-        /* The script for calculating the color contrast was taken from
-        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
-        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
-        accentColor = accentColor.trim().slice(1);
-        var r = parseInt(accentColor.substr(0, 2), 16);
-        var g = parseInt(accentColor.substr(2, 2), 16);
-        var b = parseInt(accentColor.substr(4, 2), 16);
-        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-        var textColor = (yiq >= 128) ? 'dark' : 'light';
-
-        document.documentElement.className = `has-${textColor}-text`;
+        document.documentElement.className = 'has-dark-text';
     </script>
 
     {{ghost_head}}
