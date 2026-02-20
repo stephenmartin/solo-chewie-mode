@@ -370,6 +370,14 @@ hr {
     margin-top: 40px;
 }
 
+.gh-projects-heading {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 16px;
+}
+
 .gh-projects-list {
     display: flex;
     flex-wrap: wrap;
@@ -385,7 +393,7 @@ hr {
     align-items: center;
 }
 
-.gh-projects-item::before {
+.gh-projects-item + .gh-projects-item::before {
     display: inline-block;
     width: 16px;
     height: 15px;
