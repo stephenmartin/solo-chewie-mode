@@ -4,11 +4,10 @@
     {{#tag}}
         <section class="gh-article gh-inner">
             <header class="gh-article-header">
-                <h1 class="gh-article-title">{{name}}</h1>
-                {{#if description}}
-                    <p class="gh-article-excerpt">{{description}}</p>
-                {{/if}}
-                {{> "feature-image"}}
+                <div class="gh-tag-banner">
+                    <img class="gh-tag-bang" src="{{asset "images/bang.svg"}}" alt="">
+                    <h1 class="gh-article-title">{{name}}</h1>
+                </div>
             </header>
         </section>
     {{/tag}}
