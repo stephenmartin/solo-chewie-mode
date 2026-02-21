@@ -103,40 +103,14 @@ hr {
 }
 
 .gh-content h2 {
-    font-family: var(--gh-font-heading, var(--font-heading));
     font-size: clamp(2.8rem, 1.41rem + 3.67vw, 4.8rem);
-    font-weight: 900;
-    text-transform: uppercase;
     letter-spacing: -0.03em;
 }
 
-.gh-content h3 {
-    font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: clamp(2.4rem, 1.564rem + 2.2vw, 3.6rem);
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.gh-content h4 {
-    font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: clamp(2.2rem, 1.783rem + 1.1vw, 2.8rem);
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.gh-content h5 {
-    font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: clamp(1.8rem, 1.522rem + 0.73vw, 2.2rem);
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.gh-content h6 {
-    font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
+.gh-content h3 { font-size: clamp(2.4rem, 1.564rem + 2.2vw, 3.6rem); }
+.gh-content h4 { font-size: clamp(2.2rem, 1.783rem + 1.1vw, 2.8rem); }
+.gh-content h5 { font-size: clamp(1.8rem, 1.522rem + 0.73vw, 2.2rem); }
+.gh-content h6 { font-size: 1.8rem; }
 
 .gh-canvas {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -220,12 +194,7 @@ hr {
 }
 
 .gh-head-menu,
-.gh-head-link {
-    font-family: var(--font-mono);
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
+.gh-head-link,
 .gh-head-actions {
     font-family: var(--font-mono);
     font-size: 1.2rem;
@@ -351,16 +320,9 @@ hr {
     border-right: 2px solid currentcolor;
 }
 
-.gh-poster-support .gh-poster-title {
-    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
-}
-
-/* Feature row */
-.gh-poster-feature .gh-poster-title {
-    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
-}
-
-/* Closer row */
+/* Support / Feature / Closer — same size tier */
+.gh-poster-support .gh-poster-title,
+.gh-poster-feature .gh-poster-title,
 .gh-poster-closer .gh-poster-title {
     font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
 }
@@ -480,12 +442,6 @@ hr {
     padding: 0 10px 0 8px;
     margin-left: 4px;
     background-color: var(--color-border);
-    border-radius: 40px;
-}
-
-.has-parallax-feed .gh-card-access {
-    color: var(--color-darker-gray);
-    background-color: var(--color-white);
 }
 
 .gh-card-access svg {
@@ -657,7 +613,7 @@ hr {
 
 
 
-.gh-content > [id] {
+.gh-content :is(h2, h3, h4, h5, h6) {
     font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
     text-transform: uppercase;
@@ -973,7 +929,6 @@ hr {
         margin-top: 48px;
     }
 
-    .gh-head-menu .nav li a,
     .gh-head-menu a,
     .gh-head-link {
         font-size: 1.1rem;
@@ -1079,13 +1034,6 @@ hr {
     #gh-head .gh-head-logo img {
         max-height: 44px;
         height: 44px;
-    }
-
-    .gh-head-menu,
-    .gh-head-menu a,
-    .gh-head-link,
-    .gh-head-actions {
-        font-size: 1.1rem;
     }
 
     #gh-head {
