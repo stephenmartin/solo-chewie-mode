@@ -31,6 +31,14 @@ body {
     background-color: #fff;
 }
 
+/* No rounded corners — sharp edges only */
+.gh-btn,
+.gh-card-access,
+.gh-dropdown,
+:not(pre) > code {
+    border-radius: 0 !important;
+}
+
 .gh-main {
     position: relative;
     max-width: var(--container-width);
@@ -43,8 +51,8 @@ body {
 }
 
 .gh-main .gh-inner {
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: clamp(16px, 1vw + 12px, 24px);
+    padding-left: clamp(16px, 1vw + 12px, 24px);
 }
 
 /* Post background colors — cycled by publish day-of-week, configurable in admin */
@@ -96,7 +104,7 @@ hr {
 
 .gh-content h2 {
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 4.8rem;
+    font-size: clamp(2.8rem, 1.41rem + 3.67vw, 4.8rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.03em;
@@ -104,21 +112,21 @@ hr {
 
 .gh-content h3 {
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 3.6rem;
+    font-size: clamp(2.4rem, 1.564rem + 2.2vw, 3.6rem);
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .gh-content h4 {
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 2.8rem;
+    font-size: clamp(2.2rem, 1.783rem + 1.1vw, 2.8rem);
     font-weight: 900;
     text-transform: uppercase;
 }
 
 .gh-content h5 {
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 1.522rem + 0.73vw, 2.2rem);
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -292,7 +300,7 @@ hr {
     display: block;
     margin-top: 12px;
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 3.6rem;
+    font-size: clamp(2.2rem, 1.226rem + 2.57vw, 3.6rem);
     font-weight: 700;
     line-height: auto;
     letter-spacing: 0.15em;
@@ -321,7 +329,7 @@ hr {
 
 /* Headliner — biggest type */
 .gh-poster-headliner .gh-poster-title {
-    font-size: 6.4rem;
+    font-size: clamp(3.2rem, 1.014rem + 5.87vw, 6.4rem);
 }
 
 /* Duo row — two posts side by side */
@@ -344,17 +352,17 @@ hr {
 }
 
 .gh-poster-support .gh-poster-title {
-    font-size: 5.12rem;
+    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
 }
 
 /* Feature row */
 .gh-poster-feature .gh-poster-title {
-    font-size: 5.12rem;
+    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
 }
 
 /* Closer row */
 .gh-poster-closer .gh-poster-title {
-    font-size: 5.12rem;
+    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
 }
 
 .gh-poster-rule {
@@ -363,17 +371,6 @@ hr {
     margin: 0;
     border: none;
     background-color: var(--color-darker-gray);
-}
-
-@media (max-width: 767px) {
-    .gh-poster-duo {
-        grid-template-columns: 1fr;
-    }
-
-    .gh-poster-duo .gh-poster-support:first-child {
-        border-right: none;
-        border-bottom: 2px solid currentcolor;
-    }
 }
 
 /* Projects section
@@ -579,9 +576,9 @@ hr {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 445px;
+    min-width: min(445px, 80vw);
     min-height: 45px;
-    padding: 10px 32px;
+    padding: 10px clamp(16px, 2vw + 8px, 32px);
     margin-top: 20px;
     font-family: var(--gh-font-body, var(--font-body));
     font-size: 1.6rem;
@@ -594,18 +591,6 @@ hr {
     background: url("../images/tag-bg.svg") no-repeat center / 100% 100%;
     border: none;
     border-radius: 0;
-}
-
-@media (max-width: 767px) {
-    .gh-article-tag {
-        min-width: min(445px, 90vw);
-    }
-}
-
-@media (max-width: 480px) {
-    .gh-article-tag {
-        min-width: 80vw;
-    }
 }
 
 .gh-article-header .gh-article-tag {
@@ -623,7 +608,7 @@ hr {
     margin-right: auto;
     margin-left: auto;
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: 6.4rem;
+    font-size: clamp(3.2rem, 1.014rem + 5.87vw, 6.4rem);
     font-weight: 900;
     line-height: 1;
     text-transform: uppercase;
@@ -865,7 +850,7 @@ hr {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 48px;
+    padding: 20px clamp(16px, 2vw + 8px, 48px);
 }
 
 .gh-tag-bang {
@@ -879,7 +864,7 @@ hr {
 .tag-template .gh-article-title {
     position: relative;
     color: var(--color-white);
-    font-size: 3.45rem;
+    font-size: clamp(2.2rem, 1.33rem + 2.29vw, 3.45rem);
     text-align: center;
     line-height: 1.2;
     letter-spacing: 0.05em;
@@ -918,7 +903,7 @@ hr {
 .tag-template .gh-card-title {
     font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
-    font-size: 5.12rem;
+    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
     line-height: 1.1;
     text-transform: uppercase;
 }
@@ -977,4 +962,207 @@ hr {
 .gh-copyright a {
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+
+/* Responsive — Tablet (max-width: 1023px)
+/* ---------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+    .gh-head {
+        margin-top: 48px;
+    }
+
+    .gh-head-menu .nav li a,
+    .gh-head-menu a,
+    .gh-head-link {
+        font-size: 1.1rem;
+    }
+
+    /* Scale down decorative SVGs */
+    .post-template .gh-main::before {
+        width: 50px;
+        height: 56px;
+        left: 20px;
+    }
+
+    .post-template .gh-main::after {
+        width: 54px;
+        height: 65px;
+        right: 20px;
+    }
+
+    /* Tighten poster duo padding */
+    .gh-poster-duo .gh-poster-support {
+        padding: 20px 12px;
+    }
+
+    /* Reduce tag page article bottom margin */
+    :is(.tag-template, .author-template) .gh-article {
+        margin-bottom: 48px;
+    }
+}
+
+
+/* Responsive — Large mobile (max-width: 767px)
+/* ---------------------------------------------------------- */
+
+@media (max-width: 767px) {
+    /* Nav: hide burger and brand search, show actions search on right */
+    .gh-burger { display: none !important; }
+    #gh-head .gh-head-brand .gh-search { display: none !important; }
+    #gh-head .gh-head-actions .gh-search { display: flex !important; }
+
+    /* Restore horizontal grid layout */
+    #gh-head .gh-head-inner {
+        grid-template-columns: auto 1fr auto !important;
+        grid-template-rows: auto !important;
+        gap: 0 !important;
+    }
+
+    #gh-head .gh-head-menu,
+    #gh-head .gh-head-actions {
+        position: static !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Hide subscribe/sign-in on mobile (backlog: style these properly) */
+    #gh-head .gh-head-members {
+        display: none !important;
+    }
+
+    /* Make nav items visible (shared assets set opacity:0 + transform on li) */
+    #gh-head .nav li {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    #gh-head .nav {
+        gap: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Override shared assets 2.6rem mobile menu font */
+    #gh-head .nav a {
+        font-size: 1.1rem !important;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    /* Make action buttons/links visible */
+    #gh-head :is(.gh-head-btn, .gh-head-link) {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Neutralize is-head-open state */
+    .is-head-open #gh-head {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+        inset: auto !important;
+    }
+
+    .is-head-open #gh-head .gh-head-actions {
+        position: static !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+    }
+
+    .is-head-open #gh-main {
+        opacity: 1 !important;
+    }
+
+    /* Reduce logo and nav sizes */
+    #gh-head .gh-head-logo img {
+        max-height: 44px;
+        height: 44px;
+    }
+
+    .gh-head-menu,
+    .gh-head-menu a,
+    .gh-head-link,
+    .gh-head-actions {
+        font-size: 1.1rem;
+    }
+
+    #gh-head {
+        margin-top: 32px;
+        height: auto !important;
+    }
+
+    /* Hide decorative SVGs */
+    .post-template .gh-main::before,
+    .post-template .gh-main::after {
+        display: none;
+    }
+
+    /* Reduce main top padding */
+    .gh-main {
+        padding-top: 24px;
+    }
+
+    /* Stack poster duo */
+    .gh-poster-duo {
+        grid-template-columns: 1fr;
+    }
+
+    .gh-poster-duo .gh-poster-support:first-child {
+        border-right: none;
+        border-bottom: 2px solid currentcolor;
+    }
+
+    /* Stack projects list, hide star separators */
+    .gh-projects-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gh-projects-item + .gh-projects-item::before {
+        display: none;
+    }
+}
+
+
+/* Responsive — Small mobile (max-width: 479px)
+/* ---------------------------------------------------------- */
+
+@media (max-width: 479px) {
+    .gh-head-menu,
+    .gh-head-menu a,
+    .gh-head-link,
+    .gh-head-actions {
+        font-size: 1rem;
+    }
+
+    .gh-head {
+        margin-top: 24px;
+    }
+
+    /* Tighten poster item padding */
+    .gh-poster-item {
+        padding: 16px 0;
+    }
+
+    /* Reduce poster rule thickness */
+    .gh-poster-rule {
+        height: 2px;
+    }
+
+    /* Reduce tag card spacing */
+    .tag-template .gh-card {
+        padding-bottom: 24px;
+    }
+
+    .tag-template .gh-card + .gh-card {
+        padding-top: 24px;
+    }
+
+    /* Reduce footer padding */
+    .gh-foot {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 }
