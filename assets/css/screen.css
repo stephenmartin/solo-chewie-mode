@@ -139,6 +139,17 @@ a.kg-cta-button {
     font-family: var(--gh-font-body, var(--font-body));
 }
 
+/* Replace callout emoji with custom SVG */
+.kg-callout-card .kg-callout-emoji {
+    font-size: 0 !important;
+    width: 24px !important;
+    height: 32px !important;
+    background-image: url("../images/callout-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 /* Ghost card overrides — Product */
 .kg-product-card-container {
     background-color: rgba(255, 255, 255, 0.4) !important;
@@ -195,6 +206,16 @@ a.kg-cta-button {
     font-size: 1.2rem !important;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    color: var(--color-darker-gray) !important;
+}
+
+.kg-cta-card .kg-cta-sponsor-label span {
+    font-family: var(--font-mono) !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    color: var(--color-darker-gray) !important;
+    opacity: 1 !important;
 }
 
 a.kg-cta-button {
