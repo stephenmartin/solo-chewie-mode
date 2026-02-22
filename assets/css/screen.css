@@ -96,6 +96,11 @@ a.kg-cta-button {
     border: 2px solid var(--color-darker-gray) !important;
 }
 
+.kg-bookmark-card a.kg-bookmark-container:hover {
+    background-color: #fff !important;
+    opacity: 1 !important;
+}
+
 .kg-bookmark-card .kg-bookmark-title {
     font-family: var(--gh-font-heading, var(--font-heading));
     font-weight: 900;
@@ -110,6 +115,20 @@ a.kg-cta-button {
     font-family: var(--font-mono);
     font-size: 1.2rem;
     letter-spacing: 0.05em;
+}
+
+/* Fallback bomb thumbnail when bookmark has no OG image */
+.kg-bookmark-container:not(:has(.kg-bookmark-thumbnail))::after {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 24%;
+    flex-shrink: 0;
+    background-image: url("../images/bomb.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 57px 39px;
 }
 
 /* Ghost card overrides — Callout */
