@@ -122,7 +122,7 @@ a.kg-cta-button {
     background-image: url("../images/bomb.svg") !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    background-size: 34px 24px !important;
+    background-size: 60% !important;
 }
 
 .kg-bookmark-card .kg-bookmark-thumbnail img {
