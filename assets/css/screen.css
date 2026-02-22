@@ -63,8 +63,9 @@ body {
 
 .gh-main {
     position: relative;
+    width: 100%;
     max-width: var(--container-width);
-    min-height: 100vh;
+    min-height: 100dvh;
     padding-top: 40px;
     padding-right: 0;
     padding-left: 0;
@@ -72,6 +73,10 @@ body {
     margin-left: auto;
     background-color: var(--background-color);
     overflow: hidden;
+}
+
+.post-template .gh-main {
+    padding-bottom: 80px;
 }
 
 .gh-main .gh-inner {
