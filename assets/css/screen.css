@@ -117,18 +117,16 @@ a.kg-cta-button {
     letter-spacing: 0.05em;
 }
 
-/* Fallback bomb thumbnail when bookmark has no OG image */
-.kg-bookmark-container:not(:has(.kg-bookmark-thumbnail))::after {
-    content: "";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 24%;
-    flex-shrink: 0;
-    background-image: url("../images/bomb.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 57px 39px;
+/* Replace bookmark thumbnail with bomb SVG */
+.kg-bookmark-card .kg-bookmark-thumbnail {
+    background-image: url("../images/bomb.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 34px 24px !important;
+}
+
+.kg-bookmark-card .kg-bookmark-thumbnail img {
+    display: none !important;
 }
 
 /* Ghost card overrides — Callout */
