@@ -1,19 +1,21 @@
 {{!< default}}
 
 <main class="gh-main gh-outer">
-    {{#tag}}
-        <section class="gh-article gh-inner">
-            <header class="gh-article-header">
-                <div class="gh-tag-banner">
-                    <img class="gh-tag-bang" src="{{asset "images/bang.svg"}}" alt="">
-                    <h1 class="gh-article-title">{{name}}</h1>
-                </div>
-            </header>
-        </section>
-    {{/tag}}
-    <div class="gh-feed gh-inner">
-        {{#foreach posts}}
-            {{> "loop"}}
-        {{/foreach}}
+    <div class="gh-inner">
+        {{#tag}}
+            <article class="gh-article">
+                <header class="gh-article-header">
+                    <div class="gh-tag-banner">
+                        <img class="gh-tag-bang" src="{{asset "images/bang.svg"}}" alt="">
+                        <h1 class="gh-article-title">{{name}}</h1>
+                    </div>
+                </header>
+            </article>
+        {{/tag}}
+        <div class="gh-feed">
+            {{#foreach posts}}
+                {{> "loop"}}
+            {{/foreach}}
+        </div>
     </div>
 </main>

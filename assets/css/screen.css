@@ -64,12 +64,14 @@ body {
 .gh-main {
     position: relative;
     max-width: var(--container-width);
+    min-height: 100vh;
     padding-top: 40px;
     padding-right: 0;
     padding-left: 0;
     margin-right: auto;
     margin-left: auto;
     background-color: var(--background-color);
+    overflow: hidden;
 }
 
 .gh-main .gh-inner {
@@ -752,19 +754,34 @@ hr {
     position: relative;
     z-index: 20;
     grid-column: 1 / span 12 !important;
-    padding: clamp(8rem, 10.71vw + 2.86rem, 20rem) clamp(4.8rem, 4.64vw + 2.57rem, 10rem);
-    margin-top: clamp(8rem, 7.14vw + 4.57rem, 16rem);
-    background-color: var(--color-lighter-gray);
-    transform: translate3d(0, 0, 0);
+    padding: clamp(4rem, 5vw + 2rem, 8rem) clamp(4.8rem, 4.64vw + 2.57rem, 10rem);
+    margin-top: clamp(4rem, 3.5vw + 2rem, 8rem);
+    background-color: transparent;
+    text-align: center;
 }
 
 .gh-cta-title {
     margin-bottom: 24px;
     font-family: var(--gh-font-heading, var(--font-heading));
-    font-size: clamp(3rem, 0.71vw + 2.66rem, 3.8rem);
+    font-size: clamp(2.4rem, 0.71vw + 2rem, 3rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.03em;
+}
+
+.gh-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.gh-cta-link {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
 }
 
 .gh-cta .gh-btn {
