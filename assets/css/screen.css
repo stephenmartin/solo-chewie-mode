@@ -148,6 +148,7 @@ a.kg-cta-button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    margin-right: 8px;
 }
 
 /* Ghost card overrides — Product */
