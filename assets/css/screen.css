@@ -199,6 +199,7 @@ hr {
     font-family: var(--font-mono);
     font-size: 1.2rem;
     font-weight: 700;
+    text-transform: none;
 }
 
 .is-head-stacked .gh-head-menu::before,
@@ -920,6 +921,22 @@ hr {
     text-underline-offset: 2px;
 }
 
+.gh-foot-members {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gh-foot-members a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 
 /* Responsive — Tablet (max-width: 1023px)
 /* ---------------------------------------------------------- */
@@ -968,9 +985,9 @@ hr {
     #gh-head .gh-head-brand .gh-search { display: none !important; }
     #gh-head .gh-head-actions .gh-search { display: flex !important; }
 
-    /* Restore horizontal grid layout */
+    /* Restore horizontal grid layout — auto menu so nav sits flush against actions */
     #gh-head .gh-head-inner {
-        grid-template-columns: auto 1fr auto !important;
+        grid-template-columns: 1fr auto auto !important;
         grid-template-rows: auto !important;
         gap: 0 !important;
     }
@@ -997,13 +1014,15 @@ hr {
         gap: 16px;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-right: 16px;
     }
 
     /* Override shared assets 2.6rem mobile menu font */
     #gh-head .nav a {
         font-size: 1.1rem !important;
         font-weight: 700;
-        text-transform: uppercase;
+        text-transform: none !important;
     }
 
     /* Make action buttons/links visible */
