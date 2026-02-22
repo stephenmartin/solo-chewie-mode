@@ -335,6 +335,7 @@ figcaption {
     letter-spacing: 0.05em;
     text-transform: none;
     text-align: right;
+    color: var(--color-darker-gray) !important;
 }
 
 .kg-width-full figcaption {
