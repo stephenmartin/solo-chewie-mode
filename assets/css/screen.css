@@ -39,6 +39,28 @@ body {
     border-radius: 0 !important;
 }
 
+/* Chewie Mode buttons — white fill, black border, mono uppercase */
+.gh-btn {
+    color: var(--color-darker-gray);
+    background-color: #fff;
+    border: 2px solid var(--color-darker-gray);
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gh-btn:hover {
+    color: #fff;
+    background-color: var(--color-darker-gray);
+    opacity: 1;
+}
+
+.gh-primary-btn {
+    background-color: #fff;
+}
+
 .gh-main {
     position: relative;
     max-width: var(--container-width);
@@ -243,7 +265,14 @@ hr {
 }
 
 .gh-poster-item:hover {
-    opacity: 0.7;
+    opacity: 1;
+}
+
+.gh-poster-item:hover .gh-poster-title {
+    color: #fff;
+    background-color: var(--color-darker-gray);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
 .gh-poster-title {
@@ -253,6 +282,7 @@ hr {
     line-height: normal;
     text-transform: uppercase;
     letter-spacing: 0;
+    display: inline;
 }
 
 .gh-poster-tag {
@@ -741,8 +771,6 @@ hr {
     height: 48px;
     padding-right: 24px;
     padding-left: 24px;
-    font-size: 1.8rem;
-    letter-spacing: -0.005em;
 }
 
 /* Navigation
