@@ -24,7 +24,7 @@
     --color-lighter-gray: rgba(0, 0, 0, 0.1);
     --color-darker-gray: #fff;
     --color-secondary-text: var(--color-secondary-text-light);
-    --color-border: rgba(255, 255, 255, 0.2);
+    --color-border: rgba(255, 255, 255, 0.4);
 }
 
 body {
@@ -35,7 +35,16 @@ body {
 .gh-btn,
 .gh-card-access,
 .gh-dropdown,
-:not(pre) > code {
+:not(pre) > code,
+.kg-callout-card,
+.kg-bookmark-card .kg-bookmark-container,
+.kg-bookmark-card .kg-bookmark-thumbnail img,
+.kg-button-card a.kg-btn,
+.kg-product-card-container,
+.kg-product-card a.kg-product-card-button,
+.kg-cta-card,
+.kg-cta-image-container img,
+a.kg-cta-button {
     border-radius: 0 !important;
 }
 
@@ -59,6 +68,208 @@ body {
 
 .gh-primary-btn {
     background-color: #fff;
+}
+
+/* Ghost card overrides — Button */
+.kg-button-card a.kg-btn {
+    color: var(--color-darker-gray) !important;
+    background-color: #fff !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    font-family: var(--font-mono) !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    height: 48px;
+    padding: 0 24px;
+}
+
+.kg-button-card a.kg-btn:hover {
+    color: #fff !important;
+    background-color: var(--color-darker-gray) !important;
+    opacity: 1;
+}
+
+/* Ghost card overrides — Bookmark */
+.kg-bookmark-card a.kg-bookmark-container {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid var(--color-darker-gray) !important;
+}
+
+.kg-bookmark-card .kg-bookmark-title {
+    font-family: var(--gh-font-heading, var(--font-heading));
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.kg-bookmark-card .kg-bookmark-description {
+    font-family: var(--gh-font-body, var(--font-body));
+}
+
+.kg-bookmark-card .kg-bookmark-metadata {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+/* Ghost card overrides — Callout */
+.kg-callout-card {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid var(--color-darker-gray);
+}
+
+.kg-callout-card .kg-callout-text {
+    font-family: var(--gh-font-body, var(--font-body));
+}
+
+/* Ghost card overrides — Product */
+.kg-product-card-container {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    box-shadow: none !important;
+}
+
+.kg-product-card .kg-product-card-title {
+    font-family: var(--gh-font-heading, var(--font-heading)) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+.kg-product-card .kg-product-card-description {
+    font-family: var(--gh-font-body, var(--font-body));
+}
+
+.kg-product-card a.kg-product-card-button {
+    color: var(--color-darker-gray) !important;
+    background-color: #fff !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.kg-product-card a.kg-product-card-button:hover {
+    color: #fff !important;
+    background-color: var(--color-darker-gray) !important;
+    opacity: 1;
+}
+
+/* Ghost card overrides — CTA */
+.kg-cta-card {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    box-shadow: none !important;
+}
+
+.kg-cta-card .kg-cta-title {
+    font-family: var(--gh-font-heading, var(--font-heading)) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+.kg-cta-card .kg-cta-text {
+    font-family: var(--gh-font-body, var(--font-body)) !important;
+}
+
+.kg-cta-card .kg-cta-sponsor-label {
+    font-family: var(--font-mono) !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+a.kg-cta-button {
+    color: var(--color-darker-gray) !important;
+    background-color: #fff !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    font-family: var(--font-mono) !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 0 !important;
+}
+
+a.kg-cta-button:hover {
+    color: #fff !important;
+    background-color: var(--color-darker-gray) !important;
+    opacity: 1;
+}
+
+/* Ghost card overrides — Toggle */
+.kg-toggle-card {
+    background-color: transparent !important;
+    border: 2px dotted var(--color-darker-gray) !important;
+    border-radius: 0 !important;
+}
+
+.kg-toggle-card .kg-toggle-heading-text {
+    font-family: var(--gh-font-heading, var(--font-heading)) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+.kg-toggle-card .kg-toggle-content {
+    font-family: var(--gh-font-body, var(--font-body));
+}
+
+/* Replace default chevron with custom arrow SVG */
+.kg-toggle-card .kg-toggle-card-icon svg {
+    display: none;
+}
+
+.kg-toggle-card .kg-toggle-card-icon {
+    background-image: url("../images/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 11px 10px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.kg-toggle-card[data-kg-toggle-state="close"] .kg-toggle-card-icon {
+    transform: rotate(0deg);
+}
+
+.kg-toggle-card[data-kg-toggle-state="open"] .kg-toggle-card-icon {
+    transform: rotate(180deg);
+}
+
+/* Ghost card overrides — File */
+.kg-file-card-container {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    border-radius: 0 !important;
+}
+
+.kg-file-card-title {
+    font-family: var(--gh-font-heading, var(--font-heading)) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+.kg-file-card-caption,
+.kg-file-card-metadata {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    text-transform: none;
+}
+
+/* Ghost card overrides — Audio */
+.kg-audio-card {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid var(--color-darker-gray) !important;
+    border-radius: 0 !important;
+}
+
+.kg-audio-title {
+    font-family: var(--gh-font-heading, var(--font-heading)) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
 }
 
 .gh-main {
@@ -119,7 +330,10 @@ body {
 
 
 figcaption {
-    font-size: 1.3rem;
+    font-family: var(--font-mono) !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.05em;
+    text-transform: none;
     text-align: right;
 }
 
@@ -128,7 +342,12 @@ figcaption {
 }
 
 hr {
-    background-color: var(--color-border);
+    height: 15px;
+    background-color: transparent;
+    background-image: url("../images/little-star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 15px;
 }
 
 .gh-content h2 {
