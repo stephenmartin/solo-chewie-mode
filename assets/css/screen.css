@@ -639,6 +639,10 @@ hr {
     margin-top: 40px;
 }
 
+.page-template .gh-projects {
+    margin-bottom: 80px;
+}
+
 .gh-projects-heading {
     font-family: var(--font-mono);
     font-size: 1.2rem;

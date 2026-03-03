@@ -19,22 +19,20 @@
             </section>
         </article>
 
-        {{#has tag=@custom.special_guests_tag}}
-            {{#get "posts" filter="tag:project-notes+tag:{{slug}}" limit="all" order="published_at desc"}}
-                {{#if posts}}
-                <div class="gh-projects">
-                    <ul class="gh-projects-list">
-                        <li class="gh-projects-heading">related posts</li>
-                        {{#foreach posts}}
-                        <li class="gh-projects-item">
-                            <a class="gh-projects-link" href="{{url}}">{{title}}</a>
-                        </li>
-                        {{/foreach}}
-                    </ul>
-                </div>
-                {{/if}}
-            {{/get}}
-        {{/has}}
+        {{#get "posts" filter="tag:project-notes+tag:{{slug}}" limit="all" order="published_at desc"}}
+            {{#if posts}}
+            <div class="gh-projects">
+                <ul class="gh-projects-list">
+                    <li class="gh-projects-heading">related posts</li>
+                    {{#foreach posts}}
+                    <li class="gh-projects-item">
+                        <a class="gh-projects-link" href="{{url}}">{{title}}</a>
+                    </li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            {{/if}}
+        {{/get}}
     </div>
 </main>
 
