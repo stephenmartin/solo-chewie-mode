@@ -22,14 +22,16 @@
         {{#has tag=@custom.special_guests_tag}}
             {{#get "posts" filter="tag:project-notes+tag:{{slug}}" limit="all" order="published_at desc"}}
                 {{#if posts}}
-                    <aside class="gh-related-posts">
-                        <h2 class="gh-related-posts-title">Related Posts</h2>
-                        <div class="gh-feed">
-                            {{#foreach posts}}
-                                {{> "loop"}}
-                            {{/foreach}}
-                        </div>
-                    </aside>
+                <div class="gh-projects">
+                    <ul class="gh-projects-list">
+                        <li class="gh-projects-heading">related posts</li>
+                        {{#foreach posts}}
+                        <li class="gh-projects-item">
+                            <a class="gh-projects-link" href="{{url}}">{{title}}</a>
+                        </li>
+                        {{/foreach}}
+                    </ul>
+                </div>
                 {{/if}}
             {{/get}}
         {{/has}}
