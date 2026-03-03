@@ -54,7 +54,8 @@
             },
             "special_guests_tag": {
                 "type": "text",
-                "default": "Project",
+                "default": "project",
+                "description": "Use the tag slug (lowercase, hyphenated). Find it in the tag URL: /ghost/#/tags/your-slug",
                 "group": "homepage",
                 "visibility": "show_special_guests:true"
             },

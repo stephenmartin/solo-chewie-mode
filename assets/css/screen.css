@@ -1098,6 +1098,24 @@ hr {
 }
 
 
+/* Related Posts (project pages)
+/* ---------------------------------------------------------- */
+
+.gh-related-posts {
+    margin-top: clamp(4.8rem, 4.64vw + 2.57rem, 10rem);
+    padding-top: clamp(4rem, 3.5vw + 2rem, 8rem);
+    border-top: 4px solid currentcolor;
+}
+
+.gh-related-posts-title {
+    margin-bottom: clamp(3.2rem, 2.5vw + 2rem, 4.8rem);
+    font-family: var(--gh-font-heading, var(--font-heading));
+    font-size: clamp(2.4rem, 1.41rem + 2.57vw, 3.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 /* Archive
 /* ---------------------------------------------------------- */
 
