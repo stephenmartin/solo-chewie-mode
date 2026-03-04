@@ -1,0 +1,42 @@
+{{!< default}}
+
+{{#post}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+        <article class="gh-article {{post_class}}">
+            {{#match @page.show_title_and_feature_image}}
+                <header class="gh-article-header gh-canvas">
+                    <h1 class="gh-article-title">{{title}}</h1>
+                    <img class="gh-page-star" src="{{asset "images/four-dots.svg"}}" alt="">
+                    {{> "feature-image"}}
+                </header>
+            {{/match}}
+
+            <section class="gh-content gh-canvas">
+                {{content}}
+
+                {{#get "pages" filter="tag:projects" limit="all" order="published_at desc"}}
+                    {{#if pages}}
+                    <div class="gh-project-list">
+                        {{#foreach pages}}
+                        <a class="gh-project-card" href="{{url}}">
+                            <h3 class="gh-project-card-title">{{title}}</h3>
+                            {{#if custom_excerpt}}
+                                <p class="gh-project-card-excerpt">{{custom_excerpt}}</p>
+                            {{else if excerpt}}
+                                <p class="gh-project-card-excerpt">{{excerpt}}</p>
+                            {{/if}}
+                        </a>
+                        {{/foreach}}
+                    </div>
+                    {{/if}}
+                {{/get}}
+
+                <img class="gh-content-star" src="{{asset "images/little-star.svg"}}" alt="">
+            </section>
+        </article>
+    </div>
+</main>
+
+{{/post}}
