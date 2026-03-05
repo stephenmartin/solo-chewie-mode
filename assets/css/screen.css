@@ -928,7 +928,8 @@ hr {
 
 .gh-article-image {
     grid-column: 1 / span 12;
-    margin-top: clamp(4rem, 3rem + 3.125vw, 8rem);
+    margin-top: 0;
+    margin-bottom: 40px;
 }
 
 .gh-content {
