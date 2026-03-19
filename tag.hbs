@@ -12,9 +12,17 @@
                 </header>
             </article>
         {{/tag}}
-        <div class="gh-feed">
+        <div class="gh-project-list">
             {{#foreach posts}}
-                {{> "loop"}}
+            <a class="gh-project-card" href="{{url}}">
+                <h3 class="gh-project-card-title">{{title}}</h3>
+                {{#if custom_excerpt}}
+                    <p class="gh-project-card-excerpt">{{custom_excerpt}}</p>
+                {{else if excerpt}}
+                    <p class="gh-project-card-excerpt">{{excerpt}}</p>
+                {{/if}}
+                <time class="gh-project-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
+            </a>
             {{/foreach}}
         </div>
     </div>

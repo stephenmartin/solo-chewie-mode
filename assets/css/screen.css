@@ -1186,54 +1186,10 @@ hr {
     padding-bottom: 40px;
 }
 
-.tag-template .gh-card-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.tag-template .gh-card-image {
-    display: none;
-}
-
-.tag-template .gh-card-wrapper {
-    align-items: center;
-    gap: 4px;
-}
-
-.tag-template .gh-card-title {
-    font-family: var(--gh-font-heading, var(--font-heading));
-    font-weight: 900;
-    font-size: clamp(2.8rem, 1.185rem + 4.26vw, 5.12rem);
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-.tag-template .gh-card-meta {
-    justify-content: center;
-}
-
-.tag-template .gh-card-date {
-    font-family: var(--font-mono);
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.tag-template .gh-card-length,
-.tag-template .gh-card-meta > * + *:not(script):not(.gh-card-access)::before {
-    display: none;
-}
-
-.tag-template .gh-card {
-    padding-bottom: 40px;
-    margin-top: 0 !important;
-}
-
-.tag-template .gh-card + .gh-card {
-    border-top: 4px solid currentcolor;
-    padding-top: 40px;
+.tag-template .gh-project-list {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -1463,15 +1419,6 @@ hr {
         height: 2px;
     }
 
-    /* Reduce tag card spacing */
-    .tag-template .gh-card {
-        padding-bottom: 24px;
-    }
-
-    .tag-template .gh-card + .gh-card {
-        padding-top: 24px;
-    }
-
     /* Reduce footer padding */
     .gh-foot {
         padding-top: 24px;
@@ -1516,6 +1463,17 @@ hr {
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0;
+}
+
+.gh-project-card-date {
+    display: block;
+    margin: 8px 0 0;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary-text);
 }
 
 .gh-project-card-excerpt {
