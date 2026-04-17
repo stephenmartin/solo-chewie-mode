@@ -75,6 +75,33 @@ function js(done) {
     ], handleError(done));
 }
 
+function landingCss(done) {
+    const landingDir = 'landings';
+    if (!fs.existsSync(landingDir)) { return done(); }
+
+    pump([
+        src('landings/*/*.css', {sourcemaps: true}),
+        postcss([
+            autoprefixer(),
+            cssnano()
+        ]),
+        dest('assets/built/landings/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
+
+function landingJs(done) {
+    const landingDir = 'landings';
+    if (!fs.existsSync(landingDir)) { return done(); }
+
+    pump([
+        src('landings/*/*.js', {sourcemaps: true}),
+        uglify(),
+        dest('assets/built/landings/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
+
 function zipper(done) {
     const filename = require('./package.json').name + '.zip';
 
@@ -93,8 +120,10 @@ function zipper(done) {
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
-const build = series(css, js);
+const landingCssWatcher = () => watch('landings/**/*.css', landingCss);
+const landingJsWatcher = () => watch('landings/**/*.js', landingJs);
+const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, landingCssWatcher, landingJsWatcher);
+const build = parallel(series(css, js), series(landingCss, landingJs));
 
 exports.build = build;
 exports.zip = series(build, zipper);
