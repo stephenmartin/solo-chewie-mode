@@ -111,7 +111,7 @@ function zipper(done) {
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**',
             '!yarn-error.log'
-        ]),
+        ], {encoding: false}),
         zip(filename, {compress: false}),
         dest('dist/')
     ], handleError(done));

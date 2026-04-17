@@ -176,15 +176,6 @@ nav.top .spacer { flex: 1; }
     width: 76px; height: 76px;
     border-radius: 18px;
     margin-bottom: 26px;
-    background: var(--bg-deep);
-    border: 1px dashed var(--line);
-    display: grid; place-items: center;
-    position: relative;
-}
-.app-icon-placeholder-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px; color: var(--ink-4);
-    letter-spacing: 0.02em;
 }
 h1 {
     font-size: clamp(38px, 5.4vw, 62px);
