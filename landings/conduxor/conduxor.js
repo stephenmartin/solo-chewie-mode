@@ -5,7 +5,7 @@
   var TAGLINES = {
     library: ['Your Mac library,', 'on your headphones.'],
     seconds: ['Load your swim headphones', 'in seconds.'],
-    missing: ['The missing iTunes', 'for your headphones.']
+    missing: ['The missing audio app', 'for your headphones.']
   };
 
   function apply() {
@@ -17,4 +17,21 @@
   }
 
   apply();
+
+  // Hero video overlay
+  var wrap = document.querySelector('.hero-video-wrap');
+  var overlay = document.querySelector('.hero-video-overlay');
+  var video = wrap && wrap.querySelector('video');
+  if (overlay && video) {
+    overlay.addEventListener('click', function() {
+      wrap.classList.add('playing');
+      video.play();
+    });
+    video.addEventListener('pause', function() {
+      wrap.classList.remove('playing');
+    });
+    video.addEventListener('ended', function() {
+      wrap.classList.remove('playing');
+    });
+  }
 })();

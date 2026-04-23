@@ -21,15 +21,13 @@
   <div class="container">
     <nav class="top" aria-label="Primary">
       <a class="brand" href="#top" aria-label="Conduxor home">
-        <img src="{{asset "landings/conduxor/conduxor-logo.svg"}}" alt="Conduxor" style="height:22px;width:auto;display:block;">
+        <img src="{{asset "landings/conduxor/conduxor-logo.svg"}}" alt="Conduxor" style="height:28px;width:auto;display:block;">
       </a>
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#faq">FAQ</a>
         <a href="#support">Support</a>
       </div>
-      <div class="spacer"></div>
-      <a class="btn-primary nav-download" href="#download" aria-label="Download on the Mac App Store">Download</a>
     </nav>
   </div>
 </div>
@@ -41,9 +39,8 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
-        <img class="app-icon" src="{{asset "landings/conduxor/app-icon.png"}}" alt="Conduxor app icon">
         <h1 id="h1">Your Mac library, <span class="em">on your headphones.</span></h1>
-        <p class="sub" id="sub">Conduxor copies your Apple Music tracks and any folder of audio files to Shokz OpenSwim headphones or any USB audio device. No more hunting down files and dragging them over manually.</p>
+        <p class="sub" id="sub">Conduxor is a native Mac app that makes it easy to add music to your Shokz OpenSwim headphones or any USB audio device. Select tracks from your Apple Music library or any folder and copy them over. No more hunting down files and dragging them in Finder.</p>
         <div class="cta-row">
           <a class="appstore-badge" href="#download" aria-label="Download on the Mac App Store">
             <img src="{{asset "landings/conduxor/mac-app-store-badge.svg"}}" alt="Download on the Mac App Store" style="height:44px;width:auto;">
@@ -55,24 +52,40 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Conduxor main window">
-        <img src="{{asset "landings/conduxor/music-selection.png"}}" alt="Conduxor main window with Music library and Album detail" style="width:100%;height:auto;display:block;">
+      <div class="hero-visual" aria-label="Conduxor demo video">
+        <div class="hero-video-wrap">
+          <video
+            poster="{{asset "landings/conduxor/music-selection.png"}}"
+            controls
+            preload="metadata"
+            playsinline>
+            <source src="{{asset "landings/conduxor/conduxor-demo.mp4"}}" type="video/mp4">
+          </video>
+          <div class="hero-video-overlay">
+            <div class="play-btn" aria-label="Play demo video">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="hero-video-caption">See how it works in under 30 seconds.</p>
       </div>
     </div>
   </div>
 </section>
 
-{{!-- OpenSwim Explainer --}}
-<section class="tint-section">
+{{!-- Today vs. Conduxor --}}
+<section id="how" class="tint-section compare-section">
   <div class="container">
-    <div class="explainer-grid">
-      <div style="order: 2;">
-        <div class="eyebrow">The problem</div>
-        <h2>Getting audio onto OpenSwim is a chore.</h2>
-        <p>Shokz OpenSwim and OpenSwim Pro store music on 4 GB of internal flash with no Bluetooth and no streaming. To load audio, you plug them into your Mac and manually drag files in Finder. That means exporting from Apple Music, renaming files that break on FAT32, and hoping nothing corrupts mid-transfer.</p>
-        <p>Conduxor replaces that entire workflow. It reads your Apple Music library directly, sanitizes filenames automatically, tracks copy progress, and skips duplicates. Copy audio to your OpenSwim headphones in a few clicks instead of a dozen steps.</p>
-      </div>
-      <div class="explainer-visual" aria-label="Drag and drop illustration" style="padding: 48px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;">
+    <div class="eyebrow">Today vs. Conduxor</div>
+    <h2 style="max-width: 720px;">There's a better way to load your headphones.</h2>
+
+    <div class="compare-grid">
+
+      <div class="compare-col compare-col--today">
+        <div class="compare-tag compare-tag--today">Today</div>
+        <h3>Getting audio onto OpenSwim is a chore.</h3>
+        <p>Shokz OpenSwim and OpenSwim Pro store music on 4 GB of internal flash with no Bluetooth and no streaming. To load audio, you plug them into your Mac and manually drag files in Finder, exporting from Apple Music, renaming files that break on FAT32, and hoping nothing corrupts mid-transfer.</p>
+        <div class="compare-visual compare-visual--today" aria-label="Drag and drop illustration">
         <svg viewBox="0 0 320 240" fill="none" style="width: 100%; max-width: 380px; height: auto;">
           {{!-- Finder window background --}}
           <rect x="10" y="10" width="200" height="160" rx="8" fill="var(--win-bg)" stroke="var(--win-line)" stroke-width="1.2"/>
@@ -115,53 +128,58 @@
           <text x="245" y="188" text-anchor="middle" fill="var(--ink-4)" font-size="10" font-family="'Inter', sans-serif" font-weight="500">Drop files here</text>
           <text x="245" y="203" text-anchor="middle" fill="var(--ink-4)" font-size="8" font-family="'JetBrains Mono', monospace" opacity="0.7">SWIM PRO · 4 GB</text>
         </svg>
+        </div>
       </div>
+
+      <div class="compare-col compare-col--conduxor">
+        <div class="compare-tag compare-tag--conduxor">With Conduxor</div>
+        <h3>Three steps to a loaded device.</h3>
+        <p>Conduxor reads your Apple Music library directly, sanitizes filenames automatically, tracks copy progress, and skips duplicates. It does what Finder can't.</p>
+        <div class="compare-visual compare-visual--conduxor" aria-label="Conduxor main window">
+          <img src="{{asset "landings/conduxor/music-selection.png"}}" alt="Conduxor main window" style="width:100%;height:auto;display:block;border-radius:10px;box-shadow:var(--shadow-md);">
+        </div>
+        <ol class="compare-steps">
+          <li>
+            <span class="n">01</span>
+            <div>
+              <b>Connect a device.</b> Plug in your Shokz OpenSwim or any USB storage device. Conduxor detects it automatically.
+            </div>
+          </li>
+          <li>
+            <span class="n">02</span>
+            <div>
+              <b>Browse your library.</b> View albums and imported audio from your Music library, or browse any folder on your Mac.
+            </div>
+          </li>
+          <li>
+            <span class="n">03</span>
+            <div>
+              <b>One-click copy.</b> Check any audio file to copy it. Uncheck to remove it. That's the whole interaction.
+            </div>
+          </li>
+        </ol>
+      </div>
+
     </div>
   </div>
 </section>
 
-{{!-- How it works --}}
-<section id="how">
-  <div class="container">
-    <div class="eyebrow">How it works</div>
-    <h2>Three steps to a loaded device.</h2>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-glyph">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
-        </div>
-        <h3>Connect a device</h3>
-        <p>Plug in your Shokz headphones or any USB storage device. Conduxor detects it and gets ready to sync.</p>
-      </div>
-      <div class="step">
-        <div class="step-glyph">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-        </div>
-        <h3>Browse your library</h3>
-        <p>View albums and imported audio from your Music library, or browse any folder on your Mac.</p>
-      </div>
-      <div class="step">
-        <div class="step-glyph">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-        </div>
-        <h3>One-click sync</h3>
-        <p>Check any audio file to copy it to the selected device. Uncheck to remove it. That's the whole interaction.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{{!-- Primary features --}}
+{{!-- Features --}}
 <section id="features">
   <div class="container">
+
+    <div class="features-header">
+      <div class="eyebrow">Features</div>
+      <h2 style="max-width: 720px;">Everything you need to transfer music to your headphones.</h2>
+      <p class="lede">Conduxor reads the library you already have, copies the files you actually want, and handles filenames, size limits, and duplicates without you asking.</p>
+    </div>
 
     {{!-- Apple Music --}}
     <div class="feature-row">
       <div class="fr-text">
         <span class="tag">Apple Music</span>
         <h3>Your library, already integrated.</h3>
-        <p>Conduxor reads your existing Apple Music library directly. No exports, no syncing. Browse by artist or album, pick the tracks you want, and copy them over.</p>
+        <p>Conduxor reads your existing Apple Music library directly, with no exports or syncing required. Browse by artist or album, pick the tracks you want, and copy them over.</p>
       </div>
       <div class="fr-visual">
         <div class="mock-card">
@@ -169,13 +187,13 @@
           <div class="mc-library">
             <div class="mc-sidebar">
               <div class="sh">Library</div>
-              <div class="si on"><span class="ic">♪</span>Albums</div>
-              <div class="si"><span class="ic">◉</span>Artists</div>
-              <div class="si"><span class="ic">≡</span>Songs</div>
+              <div class="si on"><span class="ic">&#9834;</span>Albums</div>
+              <div class="si"><span class="ic">&#9673;</span>Artists</div>
+              <div class="si"><span class="ic">&#8801;</span>Songs</div>
               <div class="sh">Playlists</div>
-              <div class="si"><span class="ic">▶</span>Swim Mix</div>
-              <div class="si"><span class="ic">▶</span>Long Runs</div>
-              <div class="si"><span class="ic">▶</span>Focus</div>
+              <div class="si"><span class="ic">&#9654;</span>Swim Mix</div>
+              <div class="si"><span class="ic">&#9654;</span>Long Runs</div>
+              <div class="si"><span class="ic">&#9654;</span>Focus</div>
             </div>
             <div class="mc-album-grid">
               <div class="mc-album"><div class="cov"></div><div class="tt">MAP OF THE SOUL: 7</div><div class="at">BTS</div></div>
@@ -191,11 +209,11 @@
     </div>
 
     {{!-- Any folder --}}
-    <div class="feature-row flip">
+    <div class="feature-row">
       <div class="fr-text">
         <span class="tag">Folders</span>
         <h3>Any folder works.</h3>
-        <p>Audiobooks, voice memos, DJ mixes. Point Conduxor at any folder of audio files and it'll copy what you select.</p>
+        <p>Podcasts, audiobooks, DJ mixes, voice memos, or any other audio files on your Mac. Point Conduxor at a folder and it'll copy what you select.</p>
       </div>
       <div class="fr-visual">
         <div class="mock-card">
@@ -241,7 +259,7 @@
     </div>
 
     {{!-- FAT32 --}}
-    <div class="feature-row flip">
+    <div class="feature-row">
       <div class="fr-text">
         <span class="tag">FAT32</span>
         <h3>Filenames and size limits, handled.</h3>
@@ -267,35 +285,34 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-{{!-- Secondary grid --}}
-<section style="padding-top: 40px;">
-  <div class="container">
-    <h2 style="font-size: clamp(24px, 2.6vw, 30px); margin-bottom: 28px;">A few more things to know.</h2>
-    <div class="small-grid">
-      <div class="sg-cell">
-        <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h4>No data collection</h4>
-        <p>Conduxor never phones home.</p>
+    <div class="more-features">
+      <div class="more-features-head">
+        <h3>A few more things worth mentioning.</h3>
       </div>
-      <div class="sg-cell">
-        <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></div>
-        <h4>Progress tracking</h4>
-        <p>See exactly what's copying and how long is left.</p>
-      </div>
-      <div class="sg-cell">
-        <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></div>
-        <h4>Free updates</h4>
-        <p>Buy once, get every update.</p>
-      </div>
-      <div class="sg-cell">
-        <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></div>
-        <h4>No login required</h4>
-        <p>Open the app and go.</p>
+      <div class="small-grid">
+        <div class="sg-cell">
+          <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h4>No data collection</h4>
+          <p>Conduxor never phones home.</p>
+        </div>
+        <div class="sg-cell">
+          <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></div>
+          <h4>Progress tracking</h4>
+          <p>See exactly what's copying and how long is left.</p>
+        </div>
+        <div class="sg-cell">
+          <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></div>
+          <h4>Free updates</h4>
+          <p>Buy once, get every update.</p>
+        </div>
+        <div class="sg-cell">
+          <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></div>
+          <h4>No login required</h4>
+          <p>Open the app and go.</p>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -303,7 +320,7 @@
 <section id="faq">
   <div class="container">
     <div class="eyebrow">FAQ</div>
-    <h2 style="max-width: 640px;">Common questions, answered.</h2>
+    <h2 style="max-width: 640px;">Questions you might have.</h2>
 
     <div class="faq">
       <div class="faq-item">
@@ -316,7 +333,7 @@
       <div class="faq-item">
         <div>
           <h3>Which devices does it work with?</h3>
-          <p>Shokz OpenSwim and OpenSwim Pro are the primary targets. Conduxor also works with any USB audio device that mounts as a FAT32 flash drive, like older iPods in mass-storage mode or generic MP3 players.</p>
+          <p>Shokz OpenSwim and OpenSwim Pro swimming headphones are the primary targets. Conduxor also works with any USB audio device that mounts as a FAT32 flash drive, like older iPods in mass-storage mode or generic MP3 players.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -352,7 +369,8 @@
 {{!-- Closing CTA --}}
 <section id="download" class="closing tint-section">
   <div class="container">
-    <h2>Ready to load your headphones?</h2>
+    <img class="app-icon" src="{{asset "landings/conduxor/app-icon.png"}}" alt="Conduxor app icon">
+    <h2>Ready to load music onto your headphones?</h2>
     <a class="appstore-badge" href="#" aria-label="Download on the Mac App Store">
       <img src="{{asset "landings/conduxor/mac-app-store-badge.svg"}}" alt="Download on the Mac App Store" style="height:44px;width:auto;">
     </a>
